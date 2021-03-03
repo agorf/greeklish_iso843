@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'greeklish_iso843'
+
+begin
+  print GreeklishIso843::Converter.convert($stdin.read)
+rescue Interrupt # Ctrl-C
+  puts
+end
