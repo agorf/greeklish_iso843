@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
-## 0.1.0 - 2021-03-04
+## 0.1.0 - 2021-03-03
 
 Initial release.
 
