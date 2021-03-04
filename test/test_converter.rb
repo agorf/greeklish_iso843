@@ -63,7 +63,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'αυστηρός' => 'afstiros', # αυσ
     'αυτό' => 'afto', # αυτ
     # αυφ
-    # αυχ
+    'αυχένας' => 'afchenas', # αυχ
     # αυψ
     # *αυ
 
@@ -98,10 +98,10 @@ class GreeklishIso843::ConverterTest < Minitest::Test
 
     'σκόπευα' => 'skopeva', # ευα
     'Ευάγγελος' => 'Evangelos', # # ευά
-    'σκόπευε' => 'skopeve', # ευε
+    'ευεξία' => 'evexia', # ευε
     # ευέ
-    # ευη
-    # ευή
+    'ευημερία' => 'evimeria', # ευη
+    'ευήκοος' => 'evikoos', # ευή
     # ευι
     # ευί
     # ευï
@@ -112,10 +112,10 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # ευύ
     # ευϋ
     # ευΰ
-    # ευω
+    'ευωδία' => 'evodia', # ευω
     # ευώ
     # ευβ
-    # ευγ
+    'ευγενικός' => 'evgenikos', # ευγ
     'ευδοκιμώ' => 'evdokimo', # ευδ
     # ευζ
     'ευλαβής' => 'evlavis', # ευλ
@@ -139,27 +139,27 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'εύηχος' => 'evichos', # εύη
     # εύι
     # εύï
-    # εύο
+    'Εύοσμος' => 'Evosmos', # εύο
     # εύυ
     # εύϋ
     'σκοπεύω' => 'skopevo', # εύω
     'Εύβοια' => 'Evvoia', # εύβ
     'εύγευστος' => 'evgefstos', # εύγ
-    # εύδ
+    'Εύδηλος' => 'Evdilos', # εύδ
     'Εύζωνες' => 'Evzones', # εύζ
     'εύληπτος' => 'evliptos', # εύλ
     # εύμ
     'Εύνομος' => 'Evnomos', # εύν
-    # εύρ
+    'εύρος' => 'evros', # εύρ
 
-    # εύθ
+    'εύθυμος' => 'efthymos', # εύθ
     'εύκρατος' => 'efkratos', # εύκ
     'Εύξεινος' => 'Efxeinos', # εύξ
     'εύπορος' => 'efporos', # εύπ
     'εύσημα' => 'efsima', # εύσ
     # εύτ
     # εύφ
-    # εύχ
+    'εύχομαι' => 'efchomai', # εύχ
     # εύψ
     # *εύ
 
