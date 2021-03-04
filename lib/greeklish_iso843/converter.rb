@@ -112,7 +112,7 @@ class GreeklishIso843::Converter
           end
         greek = match
       else
-        raise UnhandledCaseError
+        raise UnhandledCaseError # Should never happen
       end
 
       fix_case(greeklish, greek)
