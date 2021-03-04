@@ -74,10 +74,9 @@ Note: `^D` represents the EOF (End Of File) character, emitted with `Ctrl-D`.
 
 ## Acknowledgements
 
-This library is a Ruby port of an [official implementation][source] in
-JavaScript.
+This library was based on [an official implementation in JavaScript][js].
 
-[source]: http://www.passport.gov.gr/passports/GrElotConverter/GrElotConverter.html
+[js]: http://www.passport.gov.gr/passports/GrElotConverter/GrElotConverter.html
 
 ## License
 
