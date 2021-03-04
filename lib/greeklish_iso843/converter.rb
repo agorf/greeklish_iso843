@@ -99,9 +99,14 @@ class GreeklishIso843::Converter
         greeklish = 'ts'
         greek = match
       else
-        index = match_data.offset(0)[0]
-        greeklish = REPLACEMENTS[match[0].downcase] +
-          ('αβγδεζηλιμνορω'[text[index...index + 2].downcase] ? 'v' : 'f')
+        greeklish =
+          if match_data.post_match.empty?
+            greeklish = 'ef'
+          else
+            next_char = match_data.post_match[0].downcase
+            REPLACEMENTS[match[0].downcase] +
+              ('αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char] ? 'v' : 'f')
+          end
         greek = match
       end
 

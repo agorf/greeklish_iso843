@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+### Changed
+
+- Fix transliteration of `ευ` followed by a vowel or `β`, `γ`, `δ`, `ζ`, `λ`,
+  `μ`, `ν`, `ρ`. For example, `Ευάγγελος` used to be converted to `Efangelos`
+  and now it's `Evangelos`. `άνευ` remains `anef`.
+
 ## 0.1.0 - 2021-03-03
 
 Initial release.

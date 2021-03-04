@@ -30,7 +30,8 @@ Then you can use it to convert text:
 ```ruby
 GreeklishIso843::Converter.convert("Μπάμπης") # => "Bampis"
 GreeklishIso843::Converter.convert("Άγγελος") # => "Angelos"
-GreeklishIso843::Converter.convert("Ευάγγελος") # => "Efangelos"
+GreeklishIso843::Converter.convert("Ευάγγελος") # => "Evangelos"
+GreeklishIso843::Converter.convert("άνευ αποδοχών") # => "anef apodochon"
 ```
 
 Alternatively, you can require the `String` core extension for more convenience:
@@ -44,7 +45,8 @@ Then you can use it to convert text:
 ```ruby
 "Μπάμπης".to_greeklish # => "Bampis"
 "Άγγελος".to_greeklish # => "Angelos"
-"Ευάγγελος".to_greeklish # => "Efangelos"
+"Ευάγγελος".to_greeklish # => "Evangelos"
+"άνευ αποδοχών".to_greeklish # => "anef apodochon"
 ```
 
 There's also a command line utility that accepts Greek text from the standard
@@ -55,10 +57,12 @@ $ greeklish_iso843
 Μπάμπης
 Άγγελος
 Ευάγγελος
+άνευ αποδοχών
 ^D
 Bampis
 Angelos
-Efangelos
+Evangelos
+anef apodochon
 $
 ```
 
