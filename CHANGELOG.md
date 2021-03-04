@@ -12,7 +12,9 @@ The format is based on [Keep a Changelog][] and this project adheres to
 - Fix transliteration of `ευ` followed by a vowel or `β`, `γ`, `δ`, `ζ`, `λ`,
   `μ`, `ν`, `ρ`. For example, `Ευάγγελος` used to be converted to `Efangelos`
   and now it's `Evangelos`. `άνευ` remains `anef`.
-- Use precompiled `Regexp` for replacements to speed things up (#1 @iridakos)
+- Use precompiled `Regexp` for replacements to speed things up.
+  [#1](https://github.com/agorf/greeklish_iso843/pull/1) by
+  [@iridakos](https://github.com/iridakos)
 
 ## 0.1.0 - 2021-03-03
 
