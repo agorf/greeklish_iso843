@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+## [0.2.0][] - 2021-03-04
+
 ### Changed
 
 - Fix transliteration of `ευ` followed by a vowel or `β`, `γ`, `δ`, `ζ`, `λ`,
@@ -22,4 +24,5 @@ Initial release.
 
 [Keep a Changelog]: http://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: http://semver.org/spec/v2.0.0.html
+[0.2.0]: https://github.com/agorf/feedigest/compare/0.2.0...0.1.0
 [Unreleased]: https://github.com/agorf/feedigest/compare/0.1.0...HEAD
