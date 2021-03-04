@@ -236,7 +236,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία' => 'xeskepazo tin psychofthora sas vdelygmia', # pangram
 
     'σκετς' => 'skets', # *τς
-    'σκετσάκι' => 'sketsaki', # *τσ*
+    'σκετσάκι' => 'sketsaki' # *τσ*
   }.freeze
 
   TEST_PAIRS.each do |greek, greeklish|
