@@ -59,10 +59,6 @@ $
 
 Note: `^D` represents the EOF (End Of File) character, emitted with `Ctrl-D`.
 
-## To-do
-
-- Tests 😅
-
 ## Acknowledgements
 
 This library was based on [an official implementation in JavaScript][js].
