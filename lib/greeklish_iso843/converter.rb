@@ -89,17 +89,17 @@ class GreeklishIso843::Converter
         greek = match + next_char.to_s
       elsif match.casecmp?('μπ')
         greeklish =
-          if prev_char && GREEK_LOWER[prev_char] &&
-              next_char && GREEK_LOWER[next_char]
+          if prev_char && GREEK_LOWER[prev_char] && # *μπ
+              next_char && GREEK_LOWER[next_char] # and μπ*
             'mp'
-          else
+          else # μπ* or *μπ
             'b'
           end
         greek = match
       elsif match.casecmp?('τς')
         greeklish = 'ts'
         greek = match
-      else
+      else # αυ αύ ευ εύ ηυ ηύ
         greeklish =
           REPLACEMENTS[match[0].downcase] +
           if next_char && 'αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char]
