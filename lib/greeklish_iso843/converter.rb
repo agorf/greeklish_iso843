@@ -114,14 +114,14 @@ class GreeklishIso843::Converter
   end
 
   private def fix_case(greeklish, greek)
-    if capitalized?(greek[0])
-      if greek.length == 1 || capitalized?(greek[1])
-        greeklish.upcase
-      else
-        greeklish[0].upcase + greeklish[1..-1]
-      end
+    if !capitalized?(greek[0])
+      return greeklish
+    end
+
+    if greek.length == 1 || capitalized?(greek[1])
+      greeklish.upcase
     else
-      greeklish
+      greeklish[0].upcase + greeklish[1..-1]
     end
   end
 
