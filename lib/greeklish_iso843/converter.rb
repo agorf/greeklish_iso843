@@ -80,16 +80,16 @@ class GreeklishIso843::Converter
     text.gsub(/#{REPLACEMENTS.keys.join('|')}/i) do |match|
       match_data = Regexp.last_match
       replacement = REPLACEMENTS[match.downcase]
+      prev_char = match_data.pre_match[-1]&.downcase
+      next_char = match_data.post_match[0]&.downcase
 
       if replacement
         greeklish = replacement
-        greek = match + match_data.post_match[0].to_s
+        greek = match + next_char.to_s
       elsif match.casecmp?('μπ')
         greeklish =
-          if present?(match_data.pre_match) &&
-              GREEK_LOWER[match_data.pre_match[0].downcase] &&
-              present?(match_data.post_match) &&
-              GREEK_LOWER[match_data.post_match[0].downcase]
+          if prev_char && GREEK_LOWER[prev_char] &&
+              next_char && GREEK_LOWER[next_char]
             'mp'
           else
             'b'
@@ -100,12 +100,11 @@ class GreeklishIso843::Converter
         greek = match
       else
         greeklish =
-          if match_data.post_match.empty?
-            greeklish = 'ef'
+          REPLACEMENTS[match[0].downcase] +
+          if next_char && 'αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char]
+            'v'
           else
-            next_char = match_data.post_match[0].downcase
-            REPLACEMENTS[match[0].downcase] +
-              ('αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char] ? 'v' : 'f')
+            'f'
           end
         greek = match
       end
