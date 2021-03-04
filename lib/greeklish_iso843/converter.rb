@@ -66,8 +66,6 @@ class GreeklishIso843::Converter
 
   REPLACEMENTS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
 
-  BLANK_REGEXP = /\A[[:space:]]*\z/.freeze
-
   class Error < StandardError; end
   class UnhandledCaseError < Error; end
 
@@ -133,9 +131,5 @@ class GreeklishIso843::Converter
     else
       greeklish[0].upcase + greeklish[1..-1]
     end
-  end
-
-  private def present?(text)
-    text.to_s !~ BLANK_REGEXP
   end
 end
