@@ -1,4 +1,4 @@
-require File.expand_path('../lib/greeklish_iso843/version', __FILE__)
+require File.expand_path('lib/greeklish_iso843/version', __dir__)
 
 Gem::Specification.new do |gem|
   gem.name          = 'greeklish_iso843'
