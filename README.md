@@ -1,12 +1,11 @@
 # greeklish_iso843
 
 A [Ruby][] library that converts Greek text to [Greeklish][], conforming to the
-[ISO 843][] (ELOT 743) standard [used by the Greek State][state].
+[ISO 843][] (ELOT 743) standard used by the Greek State.
 
 [Ruby]: https://www.ruby-lang.org/en/
 [Greeklish]: https://en.wikipedia.org/wiki/Greeklish
 [ISO 843]: https://www.iso.org/standard/5215.html
-[state]: http://www.passport.gov.gr/passports/GrElotConverter/GrElotConverter.html
 
 ## Installation
 
@@ -68,6 +67,13 @@ Note: `^D` represents the EOF (End Of File) character, emitted with `Ctrl-D`.
 ## To-do
 
 - Tests 😅
+
+## Acknowledgements
+
+This library is a Ruby port of an [official implementation][source] in
+JavaScript.
+
+[source]: http://www.passport.gov.gr/passports/GrElotConverter/GrElotConverter.html
 
 ## License
 
