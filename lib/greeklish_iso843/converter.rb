@@ -68,6 +68,9 @@ class GreeklishIso843::Converter
 
   BLANK_REGEXP = /\A[[:space:]]*\z/.freeze
 
+  class Error < StandardError; end
+  class UnhandledCaseError < Error; end
+
   attr_reader :text
 
   def self.convert(text)
@@ -109,7 +112,7 @@ class GreeklishIso843::Converter
           end
         greek = match
       else
-        raise 'Unhandled case'
+        raise UnhandledCaseError
       end
 
       fix_case(greeklish, greek)
