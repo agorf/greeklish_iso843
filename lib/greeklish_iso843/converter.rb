@@ -83,8 +83,8 @@ class GreeklishIso843::Converter
 
   def convert
     text.gsub(REPLACEMENTS_REGEXP) do |match|
-      match_data = Regexp.last_match
       greeklish = REPLACEMENTS[match.downcase]
+      match_data = Regexp.last_match
       prev_char = match_data.pre_match[-1]&.downcase
       next_char = match_data.post_match[0]&.downcase
 
