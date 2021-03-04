@@ -1,4 +1,4 @@
-# greeklish_iso843
+# greeklish_iso843 ![Gem](https://img.shields.io/gem/v/greeklish_iso843)
 
 A [Ruby][] library that converts Greek text to [Greeklish][], conforming to the
 [ISO 843][] (ELOT 743) standard used by the Greek State.
