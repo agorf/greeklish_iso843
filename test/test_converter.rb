@@ -17,7 +17,9 @@ class GreeklishIso843::ConverterTest < Minitest::Test
 
     'ντόμινο' => 'ntomino', # ντ
 
-    'τσάι' => 'tsai', # τσ
+    'τσάι' => 'tsai', # τσ*
+    'σκετσάκι' => 'sketsaki', # *τσ*
+    'σκετς' => 'skets', # *τς
 
     'τζατζίκι' => 'tzatziki', # τζ
 
@@ -56,7 +58,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'αυνανίζομαι' => 'avnanizomai', # αυν
     'αυριανισμός' => 'avrianismos', # αυρ
 
-    # αυθ
+    'αυθεντικός' => 'afthentikos', # αυθ
     # αυκ
     'αυξητικός' => 'afxitikos', # αυξ
     # αυπ
@@ -80,7 +82,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # αύγ
     # αύδ
     # αύζ
-    # αύλ
+    'αύλακας' => 'avlakas', # αύλ
     'θαύμα' => 'thavma', # αύμ
     # αύν
     'αύριο' => 'avrio', # αύρ
@@ -89,8 +91,8 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # αύκ
     'αύξηση' => 'afxisi', # αύξ
     # αύπ
-    # αύσ
-    # αύτ
+    'καύση' => 'kafsi', # αύσ
+    'ταύτιση' => 'taftisi', # αύτ
     # αύφ
     # αύχ
     # αύψ
@@ -99,22 +101,22 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'σκόπευα' => 'skopeva', # ευα
     'Ευάγγελος' => 'Evangelos', # # ευά
     'ευεξία' => 'evexia', # ευε
-    # ευέ
+    'ευέξαπτος' => 'evexaptos', # ευέ
     'ευημερία' => 'evimeria', # ευη
     'ευήκοος' => 'evikoos', # ευή
     # ευι
     # ευί
     # ευï
     # ευΐ
-    # ευο
+    'ευοίωνος' => 'evoionos', # ευο
     # ευό
-    # ευυ
+    'ευυπόληπτος' => 'evypoliptos', # ευυ
     # ευύ
     # ευϋ
     # ευΰ
     'ευωδία' => 'evodia', # ευω
     # ευώ
-    # ευβ
+    'Ευβοϊκός' => 'Evvoikos', # ευβ
     'ευγενικός' => 'evgenikos', # ευγ
     'ευδοκιμώ' => 'evdokimo', # ευδ
     # ευζ
@@ -127,14 +129,14 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'ευκατάστατος' => 'efkatastatos', # ευκ
     # ευξ
     'ευπατρίδης' => 'efpatridis', # ευπ
-    # ευσ
+    'ευσεβής' => 'efsevis', # ευσ
     'ευτυχισμένος' => 'eftychismenos', # ευτ
     'ευφυής' => 'effyis', # ευφ
     'ευχάριστος' => 'efcharistos', # ευχ
     # ευψ
     'άνευ' => 'anef', # *ευ
 
-    # εύα
+    'Εύα' => 'Eva', # εύα
     # εύε
     'εύηχος' => 'evichos', # εύη
     # εύι
@@ -233,10 +235,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'Μπάμπης' => 'Bampis', # μπ* *μπ*
     'κεμπάμπ' => 'kempab', # *μπ* *μπ
 
-    'ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία' => 'xeskepazo tin psychofthora sas vdelygmia', # pangram
-
-    'σκετς' => 'skets', # *τς
-    'σκετσάκι' => 'sketsaki' # *τσ*
+    'ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία' => 'xeskepazo tin psychofthora sas vdelygmia' # pangram
   }.freeze
 
   TEST_PAIRS.each do |greek, greeklish|
