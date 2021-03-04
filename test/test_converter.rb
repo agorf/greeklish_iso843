@@ -13,7 +13,10 @@ class GreeklishIso843::ConverterTest < Minitest::Test
   }.freeze
 
   TEST_PAIRS.each do |greek, greeklish|
-    name = greeklish.downcase.gsub(/\W+/, '')
+    name = greeklish.
+      downcase.
+      gsub(/[^\w[[:space:]]]+/, '').
+      gsub(/[[:space:]]+/, '_')
 
     define_method "test_#{name}" do
       assert_equal GreeklishIso843::Converter.convert(greek), greeklish
