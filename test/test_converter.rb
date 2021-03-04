@@ -9,7 +9,8 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'άνευ αποδοχών' => 'anef apodochon',
     'εγγύηση' => 'engyisi',
     'Εύβοια' => 'Evvoia',
-    "εφ' όλης της ύλης" => "ef' olis tis ylis"
+    "εφ' όλης της ύλης" => "ef' olis tis ylis",
+    'Ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία.' => 'Xeskepazo tin psychofthora sas vdelygmia.'
   }.freeze
 
   TEST_PAIRS.each do |greek, greeklish|
