@@ -44,9 +44,6 @@ Then you can use it to convert text:
 
 ```ruby
 "Μπάμπης".to_greeklish # => "Bampis"
-"Άγγελος".to_greeklish # => "Angelos"
-"Ευάγγελος".to_greeklish # => "Evangelos"
-"άνευ αποδοχών".to_greeklish # => "anef apodochon"
 ```
 
 There's also a command line utility that accepts Greek text from the standard
@@ -55,14 +52,8 @@ input and prints the corresponding Greeklish text to the standard output:
 ```sh
 $ greeklish_iso843
 Μπάμπης
-Άγγελος
-Ευάγγελος
-άνευ αποδοχών
 ^D
 Bampis
-Angelos
-Evangelos
-anef apodochon
 $
 ```
 
