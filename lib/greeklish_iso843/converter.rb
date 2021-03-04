@@ -64,6 +64,8 @@ class GreeklishIso843::Converter
     'ώ' => 'o'
   }.freeze
 
+  REPLACEMENTS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
+
   BLANK_REGEXP = /\A[[:space:]]*\z/.freeze
 
   attr_reader :text
@@ -77,7 +79,7 @@ class GreeklishIso843::Converter
   end
 
   def convert
-    text.gsub(/#{REPLACEMENTS.keys.join('|')}/i) do |match|
+    text.gsub(REPLACEMENTS_REGEXP) do |match|
       match_data = Regexp.last_match
       replacement = REPLACEMENTS[match.downcase]
 
