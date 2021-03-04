@@ -99,7 +99,7 @@ class GreeklishIso843::Converter
       elsif match.casecmp?('τς')
         greeklish = 'ts'
         greek = match
-      else # αυ αύ ευ εύ ηυ ηύ
+      elsif greeklish.nil? # αυ αύ ευ εύ ηυ ηύ
         greeklish =
           REPLACEMENTS[match[0].downcase] +
           if next_char && 'αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char]
@@ -108,6 +108,8 @@ class GreeklishIso843::Converter
             'f'
           end
         greek = match
+      else
+        raise 'Unhandled case'
       end
 
       fix_case(greeklish, greek)
