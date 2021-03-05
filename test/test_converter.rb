@@ -32,7 +32,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'ελέγξω' => 'elenxo', # γξ
 
     'έπαυα' => 'epava', # αυα
-    # αυά
+    'ναυάγιο' => 'navagio', # # αυά
     'έπαυε' => 'epave', # αυε
     # αυέ
     # αυη
@@ -54,14 +54,14 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'άναυδος' => 'anavdos', # αυδ
     # αυζ
     'αυλή' => 'avli', # αυλ
-    # αυμ
+    'θαυματουργός' => 'thavmatourgos', # αυμ
     'αυνανίζομαι' => 'avnanizomai', # αυν
     'αυριανισμός' => 'avrianismos', # αυρ
 
     'αυθεντικός' => 'afthentikos', # αυθ
     # αυκ
     'αυξητικός' => 'afxitikos', # αυξ
-    # αυπ
+    'ναυπηγείο' => 'nafpigeio', # αυπ
     'αυστηρός' => 'afstiros', # αυσ
     'αυτό' => 'afto', # αυτ
     # αυφ
@@ -69,12 +69,12 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # αυψ
     # *αυ
 
-    # αύα
-    # αύε
-    # αύη
+    'ναύαρχος' => 'navarchos', # αύα
+    'αναπαύεται' => 'anapavetai', # αύε
+    'αγαύη' => 'agavi', # αύη
     # αύι
     # αύï
-    # αύο
+    'παύουν' => 'pavoun', # αύο
     # αύυ
     # αύϋ
     'παύω' => 'pavo', # αύω
@@ -137,7 +137,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'άνευ' => 'anef', # *ευ
 
     'Εύα' => 'Eva', # εύα
-    # εύε
+    'ρεύεται' => 'revetai', # εύε
     'εύηχος' => 'evichos', # εύη
     # εύι
     # εύï
@@ -150,7 +150,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'Εύδηλος' => 'Evdilos', # εύδ
     'Εύζωνες' => 'Evzones', # εύζ
     'εύληπτος' => 'evliptos', # εύλ
-    # εύμ
+    'μεταλλεύματα' => 'metallevmata', # εύμ
     'Εύνομος' => 'Evnomos', # εύν
     'εύρος' => 'evros', # εύρ
 
@@ -159,7 +159,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'Εύξεινος' => 'Efxeinos', # εύξ
     'εύπορος' => 'efporos', # εύπ
     'εύσημα' => 'efsima', # εύσ
-    # εύτ
+    'ρεύτηκε' => 'reftike', # εύτ
     # εύφ
     'εύχομαι' => 'efchomai', # εύχ
     # εύψ
