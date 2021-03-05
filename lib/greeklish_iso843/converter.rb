@@ -107,7 +107,7 @@ class GreeklishIso843::Converter
     end
   end
 
-  private def convert_mp(prev_char, next_char)
+  private def convert_mp_or_b(prev_char, next_char)
     if prev_char && GREEK_LOWER[prev_char] && # *μπ
         next_char && GREEK_LOWER[next_char] # and μπ*
       'mp'
@@ -130,7 +130,7 @@ class GreeklishIso843::Converter
 
     if match.casecmp?('μπ')
       prev_char = match_data.pre_match[-1]&.downcase
-      return convert_mp(prev_char, next_char)
+      return convert_mp_or_b(prev_char, next_char)
     end
 
     # αυ αύ ευ εύ ηυ ηύ
