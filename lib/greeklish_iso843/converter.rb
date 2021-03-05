@@ -66,10 +66,6 @@ class GreeklishIso843::Converter
 
   REPLACEMENTS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
 
-  class Error < StandardError; end
-
-  class UnhandledCaseError < Error; end
-
   attr_reader :text
 
   def self.convert(text)
@@ -100,7 +96,7 @@ class GreeklishIso843::Converter
           end
       elsif match.casecmp?('τς')
         greeklish = 'ts'
-      elsif greeklish.nil? # αυ αύ ευ εύ ηυ ηύ
+      else # αυ αύ ευ εύ ηυ ηύ
         greeklish =
           REPLACEMENTS[match[0].downcase] +
           if next_char && 'αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char]
@@ -108,8 +104,6 @@ class GreeklishIso843::Converter
           else
             'f'
           end
-      else
-        raise UnhandledCaseError # Should never happen
       end
 
       fix_case(greeklish, greek)
