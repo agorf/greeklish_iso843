@@ -67,6 +67,7 @@ class GreeklishIso843::Converter
   REPLACEMENTS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
 
   class Error < StandardError; end
+
   class UnhandledCaseError < Error; end
 
   attr_reader :text
