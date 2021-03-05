@@ -1,4 +1,4 @@
-# greeklish_iso843 [![Gem](https://img.shields.io/gem/v/greeklish_iso843?color=blue)](https://rubygems.org/gems/greeklish_iso843/) [![Tests](https://github.com/agorf/greeklish_iso843/actions/workflows/tests.yml/badge.svg)](https://github.com/agorf/greeklish_iso843/actions/workflows/tests.yml)
+# greeklish_iso843 [![Gem](https://img.shields.io/gem/v/greeklish_iso843?color=blue)](https://rubygems.org/gems/greeklish_iso843/) [![RuboCop](https://github.com/agorf/greeklish_iso843/actions/workflows/rubocop.yml/badge.svg)](https://github.com/agorf/greeklish_iso843/actions/workflows/rubocop.yml) [![Tests](https://github.com/agorf/greeklish_iso843/actions/workflows/tests.yml/badge.svg)](https://github.com/agorf/greeklish_iso843/actions/workflows/tests.yml)
 
 A [Ruby][] library that converts Greek text to [Greeklish][], conforming to the
 [ISO 843][] (ELOT 743) standard used by the Greek State.
