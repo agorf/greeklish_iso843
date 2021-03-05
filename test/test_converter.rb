@@ -32,7 +32,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'ελέγξω' => 'elenxo', # γξ
 
     'έπαυα' => 'epava', # αυα
-    'ναυάγιο' => 'navagio', # # αυά
+    'ναυάγιο' => 'navagio', # αυά
     'έπαυε' => 'epave', # αυε
     # αυέ
     # αυη
@@ -99,7 +99,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # *αύ
 
     'σκόπευα' => 'skopeva', # ευα
-    'Ευάγγελος' => 'Evangelos', # # ευά
+    'Ευάγγελος' => 'Evangelos', # ευά
     'ευεξία' => 'evexia', # ευε
     'ευέξαπτος' => 'evexaptos', # ευέ
     'ευημερία' => 'evimeria', # ευη
