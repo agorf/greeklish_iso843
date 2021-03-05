@@ -58,7 +58,7 @@ $
 
 Note: `^D` represents the EOF (End Of File) character, emitted with `Ctrl-D`.
 
-## Test
+## Tests
 
 You can run the tests with `rake test` or `rake  test TESTOPTS='-v'` for a more
 verbose output.
