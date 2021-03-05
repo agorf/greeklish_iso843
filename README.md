@@ -31,7 +31,6 @@ Then you can use it to convert text:
 GreeklishIso843::Converter.convert("Μπάμπης") # => "Bampis"
 GreeklishIso843::Converter.convert("Άγγελος") # => "Angelos"
 GreeklishIso843::Converter.convert("Ευάγγελος") # => "Evangelos"
-GreeklishIso843::Converter.convert("άνευ αποδοχών") # => "anef apodochon"
 ```
 
 Alternatively, you can require the `String` core extension for more convenience:
