@@ -133,7 +133,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'ευτυχισμένος' => 'eftychismenos', # ευτ
     'ευφυής' => 'effyis', # ευφ
     'ευχάριστος' => 'efcharistos', # ευχ
-    'εύψυχη' => 'efpsychi', # ευψ
+    'ευψυχία' => 'efpsychia', # ευψ
     'άνευ' => 'anef', # *ευ
 
     'Εύα' => 'Eva', # εύα
@@ -162,7 +162,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'ρεύτηκε' => 'reftike', # εύτ
     'εύφορη' => 'effori', # εύφ
     'εύχομαι' => 'efchomai', # εύχ
-    # εύψ
+    'εύψυχη' => 'efpsychi', # εύψ
     # *εύ
 
     # ηυα
