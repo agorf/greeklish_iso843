@@ -116,7 +116,7 @@ class GreeklishIso843::Converter
     end
   end
 
-  private def convert_v_or_f(match, next_char)
+  private def convert_v_or_f(next_char)
     if next_char && 'αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char]
       'v'
     else
@@ -133,6 +133,6 @@ class GreeklishIso843::Converter
     end
 
     # αυ αύ ευ εύ ηυ ηύ
-    REPLACEMENTS[match[0].downcase] + convert_v_or_f(match, next_char)
+    REPLACEMENTS[match[0].downcase] + convert_v_or_f(next_char)
   end
 end
