@@ -58,6 +58,11 @@ $
 
 Note: `^D` represents the EOF (End Of File) character, emitted with `Ctrl-D`.
 
+## Test
+
+You can run the tests with `rake test` or `rake  test TESTOPTS='-v'` for a more
+verbose output.
+
 ## Acknowledgements
 
 This library was based on [an official implementation in JavaScript][js].
