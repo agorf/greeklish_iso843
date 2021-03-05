@@ -86,6 +86,7 @@ class GreeklishIso843::Converter
       prev_char = match_data.pre_match[-1]&.downcase
       next_char = match_data.post_match[0]&.downcase
       greeklish = REPLACEMENTS[match.downcase]
+      greek = match
 
       if greeklish
         greek = match + next_char.to_s
@@ -97,10 +98,8 @@ class GreeklishIso843::Converter
           else # μπ* or *μπ
             'b'
           end
-        greek = match
       elsif match.casecmp?('τς')
         greeklish = 'ts'
-        greek = match
       elsif greeklish.nil? # αυ αύ ευ εύ ηυ ηύ
         greeklish =
           REPLACEMENTS[match[0].downcase] +
@@ -109,7 +108,6 @@ class GreeklishIso843::Converter
           else
             'f'
           end
-        greek = match
       else
         raise UnhandledCaseError # Should never happen
       end
