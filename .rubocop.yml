@@ -1,0 +1,40 @@
+# https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+
+AllCops:
+  NewCops: enable
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Metrics/BlockLength:
+  Max: 40
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/AccessModifierDeclarations:
+  EnforcedStyle: inline
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Style/NegatedIf:
+  Enabled: false
