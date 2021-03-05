@@ -36,7 +36,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     'έπαυε' => 'epave', # αυε
     # αυέ
     # αυη
-    # αυή
+    'Ναυή' => 'Navi', # αυή
     # αυι
     # αυί
     # αυï
@@ -79,18 +79,18 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # αύϋ
     'παύω' => 'pavo', # αύω
     # αύβ
-    # αύγ
+    'Αύγουστος' => 'Avgoustos', # αύγ
     # αύδ
     # αύζ
     'αύλακας' => 'avlakas', # αύλ
     'θαύμα' => 'thavma', # αύμ
-    # αύν
+    'αποχαύνωση' => 'apochavnosi', # αύν
     'αύριο' => 'avrio', # αύρ
 
-    # αύθ
-    # αύκ
+    'ενταύθα' => 'entaftha', # αύθ
+    'Καύκασος' => 'Kafkasos', # αύκ
     'αύξηση' => 'afxisi', # αύξ
-    # αύπ
+    'Ναύπακτος' => 'Nafpaktos', # αύπ
     'καύση' => 'kafsi', # αύσ
     'ταύτιση' => 'taftisi', # αύτ
     # αύφ
@@ -115,11 +115,11 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # ευϋ
     # ευΰ
     'ευωδία' => 'evodia', # ευω
-    # ευώ
+    'σκευών' => 'skevon', # ευώ
     'Ευβοϊκός' => 'Evvoikos', # ευβ
     'ευγενικός' => 'evgenikos', # ευγ
     'ευδοκιμώ' => 'evdokimo', # ευδ
-    # ευζ
+    'Ευζώνων' => 'Evzonon', # ευζ
     'ευλαβής' => 'evlavis', # ευλ
     'ευμετάβλητος' => 'evmetavlitos', # ευμ
     'ευνομία' => 'evnomia', # ευν
@@ -127,7 +127,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
 
     'ευθύς' => 'efthys', # ευθ
     'ευκατάστατος' => 'efkatastatos', # ευκ
-    # ευξ
+    'συνέντευξη' => 'synentefxi', # ευξ
     'ευπατρίδης' => 'efpatridis', # ευπ
     'ευσεβής' => 'efsevis', # ευσ
     'ευτυχισμένος' => 'eftychismenos', # ευτ
@@ -156,11 +156,11 @@ class GreeklishIso843::ConverterTest < Minitest::Test
 
     'εύθυμος' => 'efthymos', # εύθ
     'εύκρατος' => 'efkratos', # εύκ
-    'Εύξεινος' => 'Efxeinos', # εύξ
+    'επιτεύξει' => 'epitefxei', # εύξ
     'εύπορος' => 'efporos', # εύπ
     'εύσημα' => 'efsima', # εύσ
     'ρεύτηκε' => 'reftike', # εύτ
-    # εύφ
+    'εύφορη' => 'effori', # εύφ
     'εύχομαι' => 'efchomai', # εύχ
     # εύψ
     # *εύ
