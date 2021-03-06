@@ -138,7 +138,7 @@ class GreeklishIso843::GreekText
     'v' if GREEK_LETTERS_AFTER_V[next_char]
   end
 
-  private def convert_pair_before_v_or_f(match, next_char)
+  private def convert_pair_for_v_or_f(match, next_char)
     v_or_f = convert_v_or_f(next_char)
 
     if v_or_f.nil?
@@ -160,6 +160,6 @@ class GreeklishIso843::GreekText
       raise UnhandledCaseError # Should never happen
     end
 
-    convert_pair_before_v_or_f(match, next_char)
+    convert_pair_for_v_or_f(match, next_char)
   end
 end
