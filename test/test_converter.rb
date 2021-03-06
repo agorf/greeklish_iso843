@@ -96,7 +96,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
     # αύφ
     'καύχημα' => 'kafchima', # αύχ
     # αύψ
-    # *αύ
+    'Ησαύ' => 'Isaf', # *αύ
 
     'σκόπευα' => 'skopeva', # ευα
     'Ευάγγελος' => 'Evangelos', # ευά
