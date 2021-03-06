@@ -5,7 +5,11 @@ class GreeklishIso843::GreekText
 
   GREEK_VOWELS = 'αάεέηήιίϊΐοόυύϋΰωώ'.freeze
 
+  PAIRS_BEFORE_V_OR_F = %w[αυ αύ ευ εύ ηυ ηύ].freeze
+
   GREEK_LETTERS_AFTER_V = "#{GREEK_VOWELS}βγδζλμνρ".freeze
+
+  GREEK_LETTERS_AFTER_F = 'θκξπστφχψ'.freeze
 
   REPLACEMENTS = {
     'αι' => 'ai',
@@ -70,6 +74,10 @@ class GreeklishIso843::GreekText
 
   REPLACEMENTS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
 
+  class Error < StandardError; end
+
+  class UnhandledCaseError < Error; end
+
   attr_reader :text
 
   def self.to_greeklish(text)
@@ -125,11 +133,19 @@ class GreeklishIso843::GreekText
   end
 
   private def convert_v_or_f(next_char)
-    if next_char && GREEK_LETTERS_AFTER_V[next_char]
-      'v'
-    else
-      'f'
+    return 'f' if next_char.nil? || GREEK_LETTERS_AFTER_F[next_char]
+
+    'v' if GREEK_LETTERS_AFTER_V[next_char]
+  end
+
+  private def convert_pair_before_v_or_f(match, next_char)
+    v_or_f = convert_v_or_f(next_char)
+
+    if v_or_f.nil?
+      raise UnhandledCaseError # Should never happen
     end
+
+    REPLACEMENTS[match[0].downcase] + v_or_f
   end
 
   private def convert_to_greeklish(match, match_data, next_char)
@@ -140,7 +156,10 @@ class GreeklishIso843::GreekText
       return convert_mp_or_b(prev_char, next_char)
     end
 
-    # αυ αύ ευ εύ ηυ ηύ
-    REPLACEMENTS[match[0].downcase] + convert_v_or_f(next_char)
+    if PAIRS_BEFORE_V_OR_F.none? { |pair| match.casecmp?(pair) }
+      raise UnhandledCaseError # Should never happen
+    end
+
+    convert_pair_before_v_or_f(match, next_char)
   end
 end
