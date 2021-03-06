@@ -72,7 +72,7 @@ class GreeklishIso843::GreekText
     'ώ' => 'o'
   }.freeze
 
-  REPLACEMENTS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
+  REPLACEMENT_KEYS_REGEXP = /#{REPLACEMENTS.keys.join('|')}/i.freeze
 
   class Error < StandardError; end
 
@@ -89,7 +89,7 @@ class GreeklishIso843::GreekText
   end
 
   def to_greeklish
-    text.gsub(REPLACEMENTS_REGEXP) do |match|
+    text.gsub(REPLACEMENT_KEYS_REGEXP) do |match|
       greeklish =
         REPLACEMENTS[match.downcase] || convert_pair(match, Regexp.last_match)
       fix_case(greeklish, match)
