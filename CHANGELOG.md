@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ### Changed
 
+- Test text conversion thoroughly with over 100 test cases
 - Change API from `GreeklishIso843::Converter.convert(text)` to
   `GreeklishIso843::GreekText.to_greeklish(text)`
 
