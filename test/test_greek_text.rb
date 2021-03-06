@@ -245,7 +245,7 @@ class GreeklishIso843::GreekTextTest < Minitest::Test
       gsub(/[[:space:]]+/, '_')
 
     define_method "test_#{name}" do
-      assert_equal GreeklishIso843::GreekText.to_greeklish(greek), greeklish
+      assert_equal greeklish, GreeklishIso843::GreekText.to_greeklish(greek)
     end
   end
 end
