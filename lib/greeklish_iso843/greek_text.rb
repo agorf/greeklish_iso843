@@ -96,12 +96,21 @@ class GreeklishIso843::GreekText
     end
   end
 
-  private def uppercase?(char)
-    GREEK_UPPER[char]
-  end
+  private def convert_pair(match, match_data)
+    return 'ts' if match.casecmp?('τς')
 
-  private def lowercase?(char)
-    GREEK_LOWER[char]
+    next_char = match_data.post_match[0]&.downcase
+
+    if match.casecmp?('μπ')
+      prev_char = match_data.pre_match[-1]&.downcase
+      return convert_mp_or_b(prev_char, next_char)
+    end
+
+    if PAIRS_FOR_V_OR_F.none? { |pair| match.casecmp?(pair) }
+      raise UnhandledCaseError # Should never happen
+    end
+
+    convert_pair_for_v_or_f(match, next_char)
   end
 
   private def fix_case(greeklish, match)
@@ -123,12 +132,6 @@ class GreeklishIso843::GreekText
     end
   end
 
-  private def convert_v_or_f(next_char)
-    return 'f' if next_char.nil? || GREEK_LETTERS_AFTER_F[next_char]
-
-    'v' if GREEK_LETTERS_AFTER_V[next_char]
-  end
-
   private def convert_pair_for_v_or_f(match, next_char)
     v_or_f = convert_v_or_f(next_char)
 
@@ -139,20 +142,17 @@ class GreeklishIso843::GreekText
     REPLACEMENTS[match[0].downcase] + v_or_f
   end
 
-  private def convert_pair(match, match_data)
-    return 'ts' if match.casecmp?('τς')
+  private def uppercase?(char)
+    GREEK_UPPER[char]
+  end
 
-    next_char = match_data.post_match[0]&.downcase
+  private def lowercase?(char)
+    GREEK_LOWER[char]
+  end
 
-    if match.casecmp?('μπ')
-      prev_char = match_data.pre_match[-1]&.downcase
-      return convert_mp_or_b(prev_char, next_char)
-    end
+  private def convert_v_or_f(next_char)
+    return 'f' if next_char.nil? || GREEK_LETTERS_AFTER_F[next_char]
 
-    if PAIRS_FOR_V_OR_F.none? { |pair| match.casecmp?(pair) }
-      raise UnhandledCaseError # Should never happen
-    end
-
-    convert_pair_for_v_or_f(match, next_char)
+    'v' if GREEK_LETTERS_AFTER_V[next_char]
   end
 end
