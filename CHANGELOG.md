@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+## [0.3.0][] - 2021-03-06
+
 ### Changed
 
 - Test text conversion thoroughly with over 100 test cases
@@ -31,4 +33,5 @@ Initial release.
 [Keep a Changelog]: http://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: http://semver.org/spec/v2.0.0.html
 [0.2.0]: https://github.com/agorf/greeklish_iso843/compare/0.1.0...0.2.0
-[Unreleased]: https://github.com/agorf/greeklish_iso843/compare/0.2.0...HEAD
+[0.3.0]: https://github.com/agorf/greeklish_iso843/compare/0.2.0...0.3.0
+[Unreleased]: https://github.com/agorf/greeklish_iso843/compare/0.3.0...HEAD
