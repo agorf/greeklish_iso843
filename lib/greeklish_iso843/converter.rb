@@ -101,6 +101,10 @@ class GreeklishIso843::Converter
     GREEK_UPPER[text[0]]
   end
 
+  private def lowercase_char?(char)
+    GREEK_LOWER[char]
+  end
+
   private def fix_case(greeklish, greek)
     return greeklish if !capitalized?(greek[0])
 
@@ -112,8 +116,8 @@ class GreeklishIso843::Converter
   end
 
   private def convert_mp_or_b(prev_char, next_char)
-    if prev_char && GREEK_LOWER[prev_char] && # *μπ
-        next_char && GREEK_LOWER[next_char] # and μπ*
+    if prev_char && lowercase_char?(prev_char) && # *μπ
+        next_char && lowercase_char?(next_char) # and μπ*
       'mp'
     else # μπ* or *μπ
       'b'
