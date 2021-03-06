@@ -3,6 +3,10 @@ class GreeklishIso843::Converter
 
   GREEK_LOWER = 'αάβγδεέζηήθιίϊΐκλμνξοόπρσςτυύϋΰφχψωώ'.freeze
 
+  GREEK_VOWELS = 'αάεέηήιίϊΐοόυύϋΰωώ'.freeze
+
+  GREEK_LETTERS_AFTER_V = "#{GREEK_VOWELS}βγδζλμνρ".freeze
+
   REPLACEMENTS = {
     'αι' => 'ai',
     'αί' => 'ai',
@@ -117,7 +121,7 @@ class GreeklishIso843::Converter
   end
 
   private def convert_v_or_f(next_char)
-    if next_char && 'αάεέηήιίϊΐοόυύϋΰωώβγδζλμνρ'[next_char]
+    if next_char && GREEK_LETTERS_AFTER_V[next_char]
       'v'
     else
       'f'
