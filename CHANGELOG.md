@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+### Changed
+
+- Change API from `GreeklishIso843::Converter.convert(text)` to
+  `GreeklishIso843::GreekText.to_greeklish(text)`
+
 ## [0.2.0][] - 2021-03-04
 
 ### Changed

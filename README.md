@@ -28,10 +28,10 @@ require 'greeklish_iso843'
 Then you can use it to convert text:
 
 ```ruby
-GreeklishIso843::Converter.convert("Μπάμπης") # => "Bampis"
-GreeklishIso843::Converter.convert("Άγγελος") # => "Angelos"
-GreeklishIso843::Converter.convert("Ευάγγελος") # => "Evangelos"
-GreeklishIso843::Converter.convert("ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία") # => "xeskepazo tin psychofthora sas vdelygmia"
+GreeklishIso843::GreekText.to_greeklish("Μπάμπης") # => "Bampis"
+GreeklishIso843::GreekText.to_greeklish("Άγγελος") # => "Angelos"
+GreeklishIso843::GreekText.to_greeklish("Ευάγγελος") # => "Evangelos"
+GreeklishIso843::GreekText.to_greeklish("ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία") # => "xeskepazo tin psychofthora sas vdelygmia"
 ```
 
 Alternatively, you can require the `String` core extension for more convenience:

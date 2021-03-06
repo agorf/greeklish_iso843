@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'greeklish_iso843'
 
-class GreeklishIso843::ConverterTest < Minitest::Test
+class GreeklishIso843::GreekTextTest < Minitest::Test
   TEST_PAIRS = {
     'παιδιά' => 'paidia', # αι
     'φταίνε' => 'ftaine', # αί
@@ -245,7 +245,7 @@ class GreeklishIso843::ConverterTest < Minitest::Test
       gsub(/[[:space:]]+/, '_')
 
     define_method "test_#{name}" do
-      assert_equal GreeklishIso843::Converter.convert(greek), greeklish
+      assert_equal GreeklishIso843::GreekText.to_greeklish(greek), greeklish
     end
   end
 end

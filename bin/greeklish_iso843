@@ -3,7 +3,7 @@
 require 'greeklish_iso843'
 
 begin
-  print GreeklishIso843::Converter.convert($stdin.read)
+  print GreeklishIso843::GreekText.to_greeklish($stdin.read)
 rescue Interrupt # Ctrl-C
   puts
 end

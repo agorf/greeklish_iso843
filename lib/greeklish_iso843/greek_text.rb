@@ -1,4 +1,4 @@
-class GreeklishIso843::Converter
+class GreeklishIso843::GreekText
   GREEK_UPPER = 'ΑΆΒΓΔΕΈΖΗΉΘΙΊΪΚΛΜΝΞΟΌΠΡΣΤΥΎΫΦΧΨΩΏ'.freeze
 
   GREEK_LOWER = 'αάβγδεέζηήθιίϊΐκλμνξοόπρσςτυύϋΰφχψωώ'.freeze
@@ -72,15 +72,15 @@ class GreeklishIso843::Converter
 
   attr_reader :text
 
-  def self.convert(text)
-    new(text).convert
+  def self.to_greeklish(text)
+    new(text).to_greeklish
   end
 
   def initialize(text)
     @text = text
   end
 
-  def convert
+  def to_greeklish
     text.gsub(REPLACEMENTS_REGEXP) do |match|
       match_data = Regexp.last_match
       next_char = match_data.post_match[0]&.downcase
