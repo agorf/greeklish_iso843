@@ -5,7 +5,7 @@ class GreeklishIso843::GreekText
 
   GREEK_VOWELS = 'αάεέηήιίϊΐοόυύϋΰωώ'.freeze
 
-  PAIRS_BEFORE_V_OR_F = %w[αυ αύ ευ εύ ηυ ηύ].freeze
+  PAIRS_FOR_V_OR_F = %w[αυ αύ ευ εύ ηυ ηύ].freeze
 
   GREEK_LETTERS_AFTER_V = "#{GREEK_VOWELS}βγδζλμνρ".freeze
 
@@ -156,7 +156,7 @@ class GreeklishIso843::GreekText
       return convert_mp_or_b(prev_char, next_char)
     end
 
-    if PAIRS_BEFORE_V_OR_F.none? { |pair| match.casecmp?(pair) }
+    if PAIRS_FOR_V_OR_F.none? { |pair| match.casecmp?(pair) }
       raise UnhandledCaseError # Should never happen
     end
 
