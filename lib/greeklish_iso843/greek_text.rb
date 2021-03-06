@@ -90,42 +90,33 @@ class GreeklishIso843::GreekText
 
   def to_greeklish
     text.gsub(REPLACEMENTS_REGEXP) do |match|
-      match_data = Regexp.last_match
-      next_char = match_data.post_match[0]&.downcase
-      greeklish = REPLACEMENTS[match.downcase]
-      greek = match
-
-      if greeklish
-        greek = match + next_char.to_s
-      else
-        greeklish = convert_to_greeklish(match, match_data, next_char)
-      end
-
-      fix_case(greeklish, greek)
+      greeklish =
+        REPLACEMENTS[match.downcase] || convert_pair(match, Regexp.last_match)
+      fix_case(greeklish, match)
     end
   end
 
-  private def capitalized?(text)
-    GREEK_UPPER[text[0]]
+  private def uppercase?(char)
+    GREEK_UPPER[char]
   end
 
-  private def lowercase_char?(char)
+  private def lowercase?(char)
     GREEK_LOWER[char]
   end
 
-  private def fix_case(greeklish, greek)
-    return greeklish if !capitalized?(greek[0])
+  private def fix_case(greeklish, match)
+    return greeklish if !uppercase?(match[0])
 
-    if greek.length == 1 || capitalized?(greek[1])
+    if match.size == 1 || uppercase?(match[1])
       greeklish.upcase
     else
-      greeklish[0].upcase + greeklish[1..-1]
+      greeklish[0].upcase + greeklish[1].to_s
     end
   end
 
   private def convert_mp_or_b(prev_char, next_char)
-    if prev_char && lowercase_char?(prev_char) && # *μπ
-        next_char && lowercase_char?(next_char) # and μπ*
+    if prev_char && lowercase?(prev_char) && # *μπ
+        next_char && lowercase?(next_char) # and μπ*
       'mp'
     else # μπ* or *μπ
       'b'
@@ -148,8 +139,10 @@ class GreeklishIso843::GreekText
     REPLACEMENTS[match[0].downcase] + v_or_f
   end
 
-  private def convert_to_greeklish(match, match_data, next_char)
+  private def convert_pair(match, match_data)
     return 'ts' if match.casecmp?('τς')
+
+    next_char = match_data.post_match[0]&.downcase
 
     if match.casecmp?('μπ')
       prev_char = match_data.pre_match[-1]&.downcase
