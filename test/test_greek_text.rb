@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+
 require 'greeklish_iso843'
 
 class GreeklishIso843::GreekTextTest < Minitest::Test
