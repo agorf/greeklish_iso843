@@ -2,7 +2,7 @@ require 'minitest/autorun'
 
 require 'greeklish_iso843'
 
-class GreeklishIso843::GreekTextTest < Minitest::Test
+class GreekTextTest < Minitest::Test
   TEST_PAIRS = {
     'παιδιά' => 'paidia', # αι
     'φταίνε' => 'ftaine', # αί
