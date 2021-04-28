@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+## [0.4.1][] - 2021-04-29
+
+- Do not raise `UnhandledCaseError` if next character is whitespace when
+  converting v or f. For example, `άνευ` would correctly transliterate to `anef`
+  but `άνευ λόγου` would raise due to the whitespace after `ευ`.
+
 ## [0.4.0][] - 2021-04-28
 
 ### Changed
