@@ -239,7 +239,8 @@ class GreekTextTest < Minitest::Test
     'ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία' => 'xeskepazo tin psychofthora sas vdelygmia', # pangram
 
     # Return any unrecognized character as-is. In the example below, μ is "micro sign"; not the Greek letter.
-    'Πόσο καθοριστικός είναι ο  ρόλος που παίζουν οι διαπροσωπικές σχέσεις στη ζωή µας;' => 'Poso kathoristikos einai o  rolos pou paizoun oi diaprosopikes scheseis sti zoi µas;' # rubocop:disable Layout/LineLength
+    'Πόσο καθοριστικός είναι ο  ρόλος που παίζουν οι διαπροσωπικές σχέσεις στη ζωή µας;' => 'Poso kathoristikos einai o  rolos pou paizoun oi diaprosopikes scheseis sti zoi µas;', # rubocop:disable Layout/LineLength
+    'άνευ λόγου' => 'anef logou'
   }.freeze
 
   TEST_PAIRS.each do |greek, greeklish|

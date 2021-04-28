@@ -11,6 +11,8 @@ class GreeklishIso843::GreekText
 
   GREEK_LETTERS_AFTER_F = 'θκξπστφχψ'.freeze
 
+  BLANK_REGEXP = /\A[[:space:]]*\z/.freeze
+
   REPLACEMENTS = {
     'αι' => 'ai',
     'αί' => 'ai',
@@ -154,8 +156,12 @@ class GreeklishIso843::GreekText
   end
 
   private def convert_v_or_f(next_char)
-    return 'f' if next_char.nil? || GREEK_LETTERS_AFTER_F[next_char]
+    return 'f' if blank?(next_char) || GREEK_LETTERS_AFTER_F[next_char]
 
     'v' if GREEK_LETTERS_AFTER_V[next_char]
+  end
+
+  private def blank?(str)
+    str.nil? || str =~ BLANK_REGEXP
   end
 end
