@@ -36,5 +36,8 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
+Style/IfUnlessModifier:
+  Enabled: false
+
 Style/NegatedIf:
   Enabled: false
