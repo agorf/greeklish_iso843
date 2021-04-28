@@ -90,8 +90,11 @@ class GreeklishIso843::GreekText
 
   def to_greeklish
     text.gsub(REPLACEMENT_KEYS_REGEXP) do |match|
-      greeklish =
-        REPLACEMENTS[match.downcase] || convert_pair(match, Regexp.last_match)
+      greeklish = REPLACEMENTS[match.downcase] ||
+        convert_pair(match, Regexp.last_match)
+
+      next match if greeklish.nil? # Unhandled case. Return as-is.
+
       fix_case(greeklish, match)
     end
   end
@@ -106,11 +109,11 @@ class GreeklishIso843::GreekText
       return convert_mp_or_b(prev_char, next_char)
     end
 
-    if PAIRS_FOR_V_OR_F.none? { |pair| match.casecmp?(pair) }
-      raise UnhandledCaseError # Should never happen
+    if PAIRS_FOR_V_OR_F.any? { |pair| match.casecmp?(pair) }
+      return convert_pair_for_v_or_f(match, next_char)
     end
 
-    convert_pair_for_v_or_f(match, next_char)
+    match # Unhandled case. Return as-is.
   end
 
   private def fix_case(greeklish, match)
