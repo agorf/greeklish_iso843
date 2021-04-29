@@ -258,5 +258,12 @@ class GreekTextTest < Minitest::Test
         GreeklishIso843::GreekText.to_greeklish("#{greek} ")
       )
     end
+
+    define_method "test_#{name}_with_trailing_symbol" do
+      assert_equal(
+        "#{greeklish}.",
+        GreeklishIso843::GreekText.to_greeklish("#{greek}.")
+      )
+    end
   end
 end
