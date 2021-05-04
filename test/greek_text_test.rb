@@ -239,27 +239,39 @@ class GreekTextTest < Minitest::Test
     'ξεσκεπάζω την ψυχοφθόρα σας βδελυγμία' => 'xeskepazo tin psychofthora sas vdelygmia', # pangram
 
     # Return any unrecognized character as-is. In the example below, μ is "micro sign"; not the Greek letter.
-    'Πόσο καθοριστικός είναι ο  ρόλος που παίζουν οι διαπροσωπικές σχέσεις στη ζωή µας;' => 'Poso kathoristikos einai o  rolos pou paizoun oi diaprosopikes scheseis sti zoi µas;' # rubocop:disable Layout/LineLength
+    'Πόσο καθοριστικός είναι ο  ρόλος που παίζουν οι διαπροσωπικές σχέσεις στη ζωή µας;' => 'Poso kathoristikos einai o  rolos pou paizoun oi diaprosopikes scheseis sti zoi µas;', # rubocop:disable Layout/LineLength
+
+    'Θυμός' => 'Thymos',
+    'Χελμός' => 'Chelmos',
+    'ΧΕΛΜΟΣ' => 'CHELMOS',
+    'ΧΕΛΜΌΣ' => 'CHELMOS',
+    'χελμός' => 'chelmos',
+    'χΕΛΜΟΣ' => 'chELMOS',
+    'παχύς' => 'pachys',
+    'παΧύς' => 'paChys',
+    'Ψάρι' => 'Psari'
   }.freeze
 
-  TEST_PAIRS.each do |greek, greeklish|
+  TEST_PAIRS.each_with_index do |(greek, greeklish), index|
+    index += 1
+
     name = greeklish.
       downcase.
       gsub(/[^\w[[:space:]]]+/, '').
       gsub(/[[:space:]]+/, '_')
 
-    define_method "test_#{name}" do
+    define_method "test_#{name}_#{index}" do
       assert_equal greeklish, GreeklishIso843::GreekText.to_greeklish(greek)
     end
 
-    define_method "test_#{name}_with_trailing_space" do
+    define_method "test_#{name}_with_trailing_space_#{index}" do
       assert_equal(
         "#{greeklish} ",
         GreeklishIso843::GreekText.to_greeklish("#{greek} ")
       )
     end
 
-    define_method "test_#{name}_with_trailing_symbol" do
+    define_method "test_#{name}_with_trailing_symbol_#{index}" do
       assert_equal(
         "#{greeklish}.",
         GreeklishIso843::GreekText.to_greeklish("#{greek}.")

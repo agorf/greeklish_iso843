@@ -95,7 +95,7 @@ class GreeklishIso843::GreekText
 
       next match if greeklish.nil? # Unhandled case. Return as-is.
 
-      fix_case(greeklish, match)
+      fix_case(greeklish, match, Regexp.last_match)
     end
   end
 
@@ -116,14 +116,40 @@ class GreeklishIso843::GreekText
     match # Unhandled case. Return as-is.
   end
 
-  private def fix_case(greeklish, match)
-    return greeklish if !uppercase?(match[0])
-
-    if match.size == 1 || uppercase?(match[1])
-      greeklish.upcase
-    else
-      greeklish[0].upcase + greeklish[1].to_s
+  private def fix_case(greeklish, match, match_data)
+    if !uppercase?(match[0])
+      return greeklish
     end
+
+    if match.size == 1
+      if greeklish.size == 1
+        return greeklish.upcase
+      end
+
+      if greeklish.size == 2 # match is one of Θ, Χ, Ψ
+        next_char = match_data.post_match[0]
+
+        if next_char.nil? ||
+            next_char !~ REPLACEMENT_KEYS_REGEXP ||
+            !uppercase?(next_char)
+          return greeklish[0].upcase + greeklish[1].to_s
+        end
+
+        return greeklish.upcase
+      end
+
+      raise UnhandledCaseError
+    end
+
+    if match.size == 2
+      if uppercase?(match[1])
+        return greeklish.upcase
+      end
+
+      return greeklish[0].upcase + greeklish[1].to_s
+    end
+
+    raise UnhandledCaseError
   end
 
   private def convert_mp_or_b(prev_char, next_char)
