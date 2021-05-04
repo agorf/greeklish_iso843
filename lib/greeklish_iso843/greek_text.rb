@@ -122,34 +122,46 @@ class GreeklishIso843::GreekText
     end
 
     if match.size == 1
-      if greeklish.size == 1
-        return greeklish.upcase
-      end
-
-      if greeklish.size == 2 # match is one of Θ, Χ, Ψ
-        next_char = match_data.post_match[0]
-
-        if next_char.nil? ||
-            next_char !~ REPLACEMENT_KEYS_REGEXP ||
-            !uppercase?(next_char)
-          return greeklish[0].upcase + greeklish[1].to_s
-        end
-
-        return greeklish.upcase
-      end
-
-      raise UnhandledCaseError
+      return fix_case_single_letter_match(greeklish, match_data)
     end
 
     if match.size == 2
-      if uppercase?(match[1])
-        return greeklish.upcase
-      end
-
-      return greeklish[0].upcase + greeklish[1].to_s
+      return fix_case_two_letter_match(greeklish, match)
     end
 
     raise UnhandledCaseError
+  end
+
+  def fix_case_single_letter_match(greeklish, match_data)
+    if greeklish.size == 1
+      return greeklish.upcase
+    end
+
+    if greeklish.size == 2 # match is one of Θ, Χ, Ψ
+      return fix_case_th_ch_ps(greeklish, match_data)
+    end
+
+    raise UnhandledCaseError
+  end
+
+  def fix_case_two_letter_match(greeklish, match)
+    if uppercase?(match[1])
+      return greeklish.upcase
+    end
+
+    greeklish[0].upcase + greeklish[1].to_s
+  end
+
+  def fix_case_th_ch_ps(greeklish, match_data)
+    next_char = match_data.post_match[0]
+
+    if next_char.nil? ||
+        next_char !~ REPLACEMENT_KEYS_REGEXP ||
+        !uppercase?(next_char)
+      return greeklish[0].upcase + greeklish[1].to_s
+    end
+
+    greeklish.upcase
   end
 
   private def convert_mp_or_b(prev_char, next_char)
