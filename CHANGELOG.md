@@ -7,6 +7,18 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+## [0.4.2][] - 2021-05-29
+
+### Changed
+
+- Do not raise `UnhandledCaseError` if next character is a symbol when
+  converting a pair that ends with `υ` to `v` or `f`. For example, `άνευ` would
+  correctly transliterate to `anef` but `άνευ.` would raise due to `.` at the
+  end.
+- Fix case for leading `Θ`, `Χ` and `Ψ` when the word is capitalized. For
+  example, `ψάθα` would correctly transliterate to `psatha`, but `Ψάθα` would
+  incorrectly transliterate to `PSatha`. Now it is transliterated to `Psatha`.
+
 ## [0.4.1][] - 2021-04-29
 
 ### Changed
@@ -54,4 +66,5 @@ Initial release.
 [0.3.0]: https://github.com/agorf/greeklish_iso843/compare/0.2.0...0.3.0
 [0.4.0]: https://github.com/agorf/greeklish_iso843/compare/0.3.0...0.4.0
 [0.4.1]: https://github.com/agorf/greeklish_iso843/compare/0.4.0...0.4.1
-[Unreleased]: https://github.com/agorf/greeklish_iso843/compare/0.4.1...HEAD
+[0.4.2]: https://github.com/agorf/greeklish_iso843/compare/0.4.1...0.4.2
+[Unreleased]: https://github.com/agorf/greeklish_iso843/compare/0.4.2...HEAD
