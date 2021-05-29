@@ -66,8 +66,8 @@ verbose output.
 
 ## Acknowledgements
 
-This library was initially based on [an official, buggy implementation in
-JavaScript][js].
+This library was initially based on an official, buggy [implementation][js] in
+JavaScript of the Hellenic Police.
 
 [js]: http://www.passport.gov.gr/passports/GrElotConverter/GrElotConverter.html
 
