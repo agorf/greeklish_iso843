@@ -242,11 +242,20 @@ class GreekTextTest < Minitest::Test
     'Πόσο καθοριστικός είναι ο  ρόλος που παίζουν οι διαπροσωπικές σχέσεις στη ζωή µας;' => 'Poso kathoristikos einai o  rolos pou paizoun oi diaprosopikes scheseis sti zoi µas;', # rubocop:disable Layout/LineLength
 
     'Θυμός' => 'Thymos',
+    'ΘΥΜΟΣ' => 'THYMOS',
+    'ΘΥΜΌΣ' => 'THYMOS',
+    'θυμός' => 'thymos',
+    'θΥΜΟΣ' => 'thYMOS',
     'Χελμός' => 'Chelmos',
     'ΧΕΛΜΟΣ' => 'CHELMOS',
     'ΧΕΛΜΌΣ' => 'CHELMOS',
     'χελμός' => 'chelmos',
     'χΕΛΜΟΣ' => 'chELMOS',
+    'Ψάθα' => 'Psatha',
+    'ΨΑΘΑ' => 'PSATHA',
+    'ΨΆΘΑ' => 'PSATHA',
+    'ψάθα' => 'psatha',
+    'ψΑΘΑ' => 'psATHA',
     'παχύς' => 'pachys',
     'παΧύς' => 'paChys',
     'Ψάρι' => 'Psari'
