@@ -132,7 +132,7 @@ class GreeklishIso843::GreekText
     raise UnhandledCaseError
   end
 
-  def fix_case_single_letter_match(greeklish, match_data)
+  private def fix_case_single_letter_match(greeklish, match_data)
     if greeklish.size == 1
       return greeklish.upcase
     end
@@ -144,7 +144,7 @@ class GreeklishIso843::GreekText
     raise UnhandledCaseError
   end
 
-  def fix_case_two_letter_match(greeklish, match)
+  private def fix_case_two_letter_match(greeklish, match)
     if uppercase?(match[1])
       return greeklish.upcase
     end
@@ -152,7 +152,7 @@ class GreeklishIso843::GreekText
     greeklish[0].upcase + greeklish[1].to_s
   end
 
-  def fix_case_th_ch_ps(greeklish, match_data)
+  private def fix_case_th_ch_ps(greeklish, match_data)
     next_char = match_data.post_match[0]
 
     if next_char.nil? ||
