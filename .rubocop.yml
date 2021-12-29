@@ -41,3 +41,6 @@ Style/IfUnlessModifier:
 
 Style/NegatedIf:
   Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
