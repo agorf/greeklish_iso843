@@ -4,6 +4,8 @@ require 'greeklish_iso843'
 
 class GreekTextTest < Minitest::Test
   TEST_PAIRS = {
+    '' => '',
+
     'παιδιά' => 'paidia', # αι
     'φταίνε' => 'ftaine', # αί
 
@@ -260,6 +262,12 @@ class GreekTextTest < Minitest::Test
     'παΧύς' => 'paChys',
     'Ψάρι' => 'Psari'
   }.freeze
+
+  def test_nil_throws_an_error
+    assert_raises(NoMethodError) do
+      GreeklishIso843::GreekText.to_greeklish(nil)
+    end
+  end
 
   TEST_PAIRS.each_with_index do |(greek, greeklish), index|
     index += 1
