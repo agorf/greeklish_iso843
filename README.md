@@ -8,6 +8,11 @@ the Greek state.
 [Greeklish]: https://en.wikipedia.org/wiki/Greeklish
 [ISO 843]: https://www.iso.org/standard/5215.html
 
+## Demo
+
+An online service that uses this Gem is available at
+<https://greeklish-iso843.herokuapp.com/>
+
 ## Installation
 
 As a [Gem][]:
