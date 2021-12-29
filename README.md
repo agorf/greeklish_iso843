@@ -10,8 +10,7 @@ the Greek state.
 
 ## Demo
 
-An online service that uses this Gem is available at
-<https://greeklish-iso843.herokuapp.com/>
+An online service that uses this Gem is available at <https://greeklish.xyz>
 
 ## Installation
 
