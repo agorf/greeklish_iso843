@@ -260,7 +260,13 @@ class GreekTextTest < Minitest::Test
     'ψΑΘΑ' => 'psATHA',
     'παχύς' => 'pachys',
     'παΧύς' => 'paChys',
-    'Ψάρι' => 'Psari'
+    'Ψάρι' => 'Psari',
+
+    'ους' => 'ous',
+    'ιυς' => 'iys',
+    'ευς' => 'efs',
+    'αυς' => 'afs',
+    'ηυς' => 'ifs',
   }.freeze
 
   def test_nil_throws_an_error

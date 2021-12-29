@@ -9,7 +9,7 @@ class GreeklishIso843::GreekText
 
   GREEK_LETTERS_AFTER_V = "#{GREEK_VOWELS}βγδζλμνρ".freeze
 
-  GREEK_LETTERS_AFTER_F = 'θκξπστφχψ'.freeze
+  GREEK_LETTERS_AFTER_F = 'θκξπσςτφχψ'.freeze
 
   REPLACEMENTS = {
     'αι' => 'ai',
