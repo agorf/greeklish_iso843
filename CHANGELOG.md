@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [Unreleased][]
 
+## [0.4.3][] - 2022-01-21
+
+- Fix `ευς`, `αυς` and `ηυς` throwing `UnhandledCaseError` #3 Thanks @cherouvim
+
 ## [0.4.2][] - 2021-05-29
 
 ### Changed
@@ -67,4 +71,5 @@ Initial release.
 [0.4.0]: https://github.com/agorf/greeklish_iso843/compare/0.3.0...0.4.0
 [0.4.1]: https://github.com/agorf/greeklish_iso843/compare/0.4.0...0.4.1
 [0.4.2]: https://github.com/agorf/greeklish_iso843/compare/0.4.1...0.4.2
-[Unreleased]: https://github.com/agorf/greeklish_iso843/compare/0.4.2...HEAD
+[0.4.3]: https://github.com/agorf/greeklish_iso843/compare/0.4.2...0.4.3
+[Unreleased]: https://github.com/agorf/greeklish_iso843/compare/0.4.3...HEAD
