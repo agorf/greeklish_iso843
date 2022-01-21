@@ -9,7 +9,11 @@ The format is based on [Keep a Changelog][] and this project adheres to
 
 ## [0.4.3][] - 2022-01-21
 
-- Fix `ευς`, `αυς` and `ηυς` throwing `UnhandledCaseError` #3 Thanks @cherouvim
+- [#3][]: Fix `ευς`, `αυς` and `ηυς` throwing `UnhandledCaseError`
+  ([@cherouvim][])
+
+[#3]: https://github.com/agorf/greeklish_iso843/issues/3
+[@cherouvim]: https://github.com/cherouvim
 
 ## [0.4.2][] - 2021-05-29
 
